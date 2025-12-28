@@ -204,14 +204,16 @@ const Contact = () => {
                 />
               </div>
 
-              <Button variant="gradient" size="xl" type="submit" className="w-full">
-                Send via WhatsApp
-                <Send className="w-5 h-5" />
-              </Button>
-              <Button variant="outline" size="xl" type="button" onClick={handleEmailSubmit} className="w-full">
-                Send via Email
-                <Mail className="w-5 h-5" />
-              </Button>
+              <div className="grid grid-cols-2 gap-4">
+                <Button variant="gradient" size="xl" type="submit" className="w-full">
+                  Send via WhatsApp
+                  <Send className="w-5 h-5" />
+                </Button>
+                <Button variant="gradient" size="xl" type="button" onClick={handleEmailSubmit} className="w-full">
+                  Send via Email
+                  <Mail className="w-5 h-5" />
+                </Button>
+              </div>
             </form>
           </div>
         </div>
