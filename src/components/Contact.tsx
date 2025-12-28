@@ -15,16 +15,27 @@ const Contact = () => {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create WhatsApp message
     const whatsappMessage = `Hi FourLoops!%0A%0A*Name:* ${formData.name}%0A*College:* ${formData.college}%0A*Domain:* ${formData.domain}%0A*Deadline:* ${formData.deadline}%0A*Message:* ${formData.message}`;
     
     window.open(`https://wa.me/918879703614?text=${whatsappMessage}`, '_blank');
     
     toast({
       title: "Redirecting to WhatsApp",
+      description: "We'll get back to you as soon as possible!",
+    });
+  };
+
+  const handleEmailSubmit = () => {
+    const emailSubject = encodeURIComponent(`Project Inquiry from ${formData.name}`);
+    const emailBody = encodeURIComponent(`Hi FourLoops!\n\nName: ${formData.name}\nCollege: ${formData.college}\nDomain: ${formData.domain}\nDeadline: ${formData.deadline}\nMessage: ${formData.message}`);
+    
+    window.open(`mailto:fourloopstudio4@gmail.com?subject=${emailSubject}&body=${emailBody}`, '_blank');
+    
+    toast({
+      title: "Opening Email Client",
       description: "We'll get back to you as soon as possible!",
     });
   };
@@ -115,7 +126,7 @@ const Contact = () => {
               Send us a Message
             </h3>
             
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleWhatsAppSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -196,6 +207,10 @@ const Contact = () => {
               <Button variant="gradient" size="xl" type="submit" className="w-full">
                 Send via WhatsApp
                 <Send className="w-5 h-5" />
+              </Button>
+              <Button variant="outline" size="xl" type="button" onClick={handleEmailSubmit} className="w-full">
+                Send via Email
+                <Mail className="w-5 h-5" />
               </Button>
             </form>
           </div>

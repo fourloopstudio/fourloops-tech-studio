@@ -3,7 +3,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Domains from '@/components/Domains';
 import Services from '@/components/Services';
-import ServiceTiers from '@/components/ServiceTiers';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -27,7 +26,6 @@ const Index = () => {
           <Hero />
           <Domains />
           <Services />
-          <ServiceTiers />
           <WhyChooseUs />
           <Contact />
         </main>
