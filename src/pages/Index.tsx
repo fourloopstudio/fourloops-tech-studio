@@ -1,13 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from 'react-helmet-async';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import Domains from '@/components/Domains';
+import Services from '@/components/Services';
+import ServiceTiers from '@/components/ServiceTiers';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>FourLoops - Infinite Support for Cutting-Edge Student Projects</title>
+        <meta 
+          name="description" 
+          content="End-to-end academic project development in AI, ML, Data Science, Cyber Security & more. Get code, reports, PPTs, and viva preparation with continuous support." 
+        />
+        <meta name="keywords" content="student projects, academic projects, machine learning projects, AI projects, data science, final year project, college project help" />
+        <link rel="canonical" href="https://fourloops.dev" />
+      </Helmet>
+
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <main>
+          <Hero />
+          <Domains />
+          <Services />
+          <ServiceTiers />
+          <WhyChooseUs />
+          <Contact />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
